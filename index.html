@@ -5,8 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JSHomework</title>
+    <script>
+    function changeColor(newColor) {
+    var elem = document.getElementById('para');
+    elem.style.color = newColor;
+}
+    </script>
 </head>
 <body>
-    
+    <div class="main" id="main"></div>
+
+    <p id="para">TXT</p>
+    <button onclick="changeColor('blue');">blue</button>
+    <button onclick="changeColor('red');">red</button>
+
+    <script type="text/javascript">
+        function changeClass(){
+            document.getElementById("main").className = "newclass";
+        }
+    </script>
+    <button onclick="changeClass()">changeClass</button>
+
 </body>
 </html>
