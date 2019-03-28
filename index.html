@@ -1,30 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JSHomework</title>
     <script>
-    function changeColor(newColor) {
-    var elem = document.getElementById('para');
-    elem.style.color = newColor;
-}
+        function changeColor(newColor) {
+            let elem = document.getElementById('oldClass');
+            elem.style.color = newColor;
+        }
+    </script>
+    <style>
+        #oldClass {
+            width: 300px;
+            height: 300px;
+            background-color: purple;
+            color: white;
+            font-size: 45px;
+            text-align: center;
+        }
+
+        ;
+    </style>
+    <script>
+        function changeBgcolor() {
+            document.getElementById("oldClass").style.backgroundColor = "black";
+        }
     </script>
 </head>
+
 <body>
-    <div class="main" id="main"></div>
-
-    <p id="para">TXT</p>
-    <button onclick="changeColor('blue');">blue</button>
-    <button onclick="changeColor('red');">red</button>
-
+    <div class="oldClass" id="oldClass">01002313</div>
+    <button onclick="changeColor('yellow');">txtyellow</button><br>
+    <button onclick="changeColor('red');">txtred</button><br>
     <script type="text/javascript">
-        function changeClass(){
-            document.getElementById("main").className = "newclass";
+        function changeClass() {
+            document.getElementById("oldClass").className = "newclass";
         }
     </script>
     <button onclick="changeClass()">changeClass</button>
-
+    <button type="button" class="oldClass" onclick="testtoggle(this)">toggleClass</button>
+    <br>
+    <button onclick="changeBgcolor()">changeBgcolor</button>
+    <script>
+        window.testtoggle = function (elmnt) {
+            if (elmnt.className == "oldClass") {
+                elmnt.className = "newClass";
+            } else {
+                elmnt.className = "oldClass";
+            }
+        }
+    </script>
+    <style>
+        button {
+            cursor: pointer;
+            padding: 16px;
+            font-size: 16px;
+            border-radius: 100%;
+        }
+        .oldClass {
+            background-color: #a8a8a8;
+            border: 5px solid #ddd;
+        }
+        .newClass {
+            background-color: purple;
+            border: 5px solid green;
+        }
+    </style>
+    <hr>ArrayTester
+    <hr>
+    <br>
+    <script>
+        var x = 0;
+        var array = Array();
+        function add_element_to_array() {
+            array[x] = document.getElementById("text1").value;
+            alert("element: " + array[x] + " added to index " + x);
+            x++;
+            document.getElementById("text1").value = "";
+        }
+        function display_array() {
+            var e = "<hr/>";
+            for (var y = 0; y < array.length; y++) {
+                e += "element " + y + " = " + array[y] + "<br/>";
+            }
+            document.getElementById("Result").innerHTML = e;
+        }
+    </script>
+    <input type="text" id="text1"></input>
+    <input type="button" id="button1" value="Add" onclick="add_element_to_array();"></input>
+    <input type="button" id="button2" value="Display" onclick="display_array();"></input>
+    <div id="Result"></div>
 </body>
 </html>
